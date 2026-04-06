@@ -1,3 +1,5 @@
 01_my-app/node_modules/
 01_vite_app/node_modules/
 02_props_tailwing/node_modules/
+03/hooks/node_modules
+04/password_genrator/node_modules
