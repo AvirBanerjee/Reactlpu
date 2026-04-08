@@ -1,3 +1,4 @@
+```js
 import { useState, useCallback, useRef, useEffect } from 'react';
 
 function App() {
@@ -35,18 +36,17 @@ function App() {
     generatePassword();
   }, [generatePassword]);
 
-  //Save
-  useEffect(() => {
-    localStorage.setItem("passwords", JSON.stringify(savedPasswords));
-  }, [savedPasswords]);
-
-
   // Load
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("passwords")) || [];
     setSavedPasswords(stored);
   }, []);
-  
+
+  //Save
+  useEffect(() => {
+    localStorage.setItem("passwords", JSON.stringify(savedPasswords));
+  }, [savedPasswords]);
+
   // Copy
   const copyPassword = () => {
     passwordRef.current.select();
@@ -79,7 +79,7 @@ function App() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
 
-      <div className="bg-gray-800 p-6 rounded-2xl shadow-lg w-105 space-y-5">
+      <div className="bg-gray-800 p-6 rounded-2xl shadow-lg w-[420px] space-y-5">
 
         <h2 className="text-2xl font-bold text-center">
           Password Generator
@@ -214,7 +214,9 @@ function App() {
         </div>
 
       </div>
+    </div>
   );
 }
 
 export default App;
+```
